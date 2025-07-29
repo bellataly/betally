@@ -1,0 +1,13 @@
+<script type="module">
+  import Agent from 'https://cdn.jsdelivr.net/npm/@agent-embed/js@latest/dist/web.js'
+  Agent.initStandard({
+    agentName: "Chatbot-6c81c",
+    stream: true,
+    persistSession: false,
+    filterResponse: function(response) {
+        const citationRegex = /【d+:d+†[^【】]+】/g;
+        return response.replace(citationRegex, "");
+      }
+  });
+</script>
+<agent-standard style="width: 100%; height: 600px; "></agent-standard>
